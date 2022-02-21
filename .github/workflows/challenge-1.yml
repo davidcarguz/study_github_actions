@@ -1,0 +1,38 @@
+name: challenge
+
+on: push
+
+jobs:
+    job1:
+        name: Ubuntu Job
+        runs-on: ubuntu-latest
+        steps:
+        - name: checkout repo
+          uses: actions/checkout@v2
+        - name: print date ubuntu
+          run: date
+    job2:
+        name: Windows Job
+        runs-on: windows-latest
+        steps:
+        - name: checkout repo
+          uses: actions/checkout@v2
+        - name: print date windows
+          run: "date /t"
+    job3:
+        name: Mac Job
+        runs-on: macos-latest
+        steps:
+        - name: checkout repo
+          uses: actions/checkout@v2
+        - name: print date ubuntu
+          run: date
+    job4:
+        name: Ubuntu 18.04 Job
+        runs-on: ubuntu-18.04
+        steps:
+        - name: checkout repo
+          uses: actions/checkout@v2
+        - name: print date ubuntu
+          run: date
+        needs: [job1,job2,job3]         
