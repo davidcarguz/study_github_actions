@@ -1,4 +1,4 @@
-name: challenge
+name: challenge-1
 
 on: push
 
@@ -18,7 +18,7 @@ jobs:
         - name: checkout repo
           uses: actions/checkout@v2
         - name: print date windows
-          run: "date /t"
+          run: date
     job3:
         name: Mac Job
         runs-on: macos-latest
