@@ -1,0 +1,17 @@
+name: challenge-1
+
+on: push
+jobs:
+    create-artifact:
+        env:
+            ARTIFACT_NAME: 'test_artifact'
+        name: create artifact
+        runs-on: ubuntu-latest
+        steps:
+        - name: checkout repo
+          uses: actions/checkout@v2
+        - name: create artifact
+          uses: actions/upload-artifact@v2
+        - with:
+              name: $ARTIFACT_NAME
+              path: .
