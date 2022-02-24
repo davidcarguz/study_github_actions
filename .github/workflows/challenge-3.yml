@@ -12,6 +12,7 @@ jobs:
           run: python hello.py
     build:
         name: build artifact
+        needs: unit-tests
         runs-on: ubuntu-latest
         steps:
         - name: checkout repo
