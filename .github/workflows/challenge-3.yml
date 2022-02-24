@@ -3,7 +3,7 @@ name: challenge-3
 on: [push]
 jobs:
     unit-tests:
-        name: checkout and tests
+        name: tests
         runs-on: ubuntu-latest
         steps:
         - name: checkout repo
