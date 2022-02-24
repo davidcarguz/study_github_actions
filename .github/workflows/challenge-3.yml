@@ -1,0 +1,25 @@
+name: challenge-3
+
+on: [push]
+jobs:
+    unit-tests:
+        name: checkout and tests
+        runs-on: ubuntu-latest
+        steps:
+        - name: checkout repo
+          uses: actions/checkout@v2
+        - name: tests
+          run: python hello.py
+    build:
+        name: build artifact
+        runs-on: ubuntu-latest
+        steps:
+        - name: checkout repo
+          uses: actions/checkout@v2
+        - name: create artifact
+          uses: actions/upload-artifact@v2
+          with:
+              name: hello_world
+              path: ./hello.py         
+        
+        
